@@ -11,7 +11,11 @@ import SwiftUI
 struct Recipe_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if #available(iOS 15.0.0, *) {
+                RecipeCategoryListScreen()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
